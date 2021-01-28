@@ -5,8 +5,8 @@ from functools import partial
 
 from django import VERSION as DJANGO_VERSION
 from django.db import models
-from elasticsearch.helpers import bulk, parallel_bulk
-from elasticsearch_dsl import Document as DSLDocument
+from elasticsearch7.helpers import bulk, parallel_bulk
+from elasticsearch7_dsl import Document as DSLDocument
 from six import iteritems
 
 from .exceptions import ModelFieldNotMappedError
@@ -159,8 +159,8 @@ class DocType(DSLDocument):
     @classmethod
     def generate_id(cls, object_instance):
         """
-        The default behavior is to use the Django object's pk (id) as the 
-        elasticseach index id (_id). If needed, this method can be overloaded 
+        The default behavior is to use the Django object's pk (id) as the
+        elasticseach index id (_id). If needed, this method can be overloaded
         to change this default behavior.
         """
         return object_instance.pk

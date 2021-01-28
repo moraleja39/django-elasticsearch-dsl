@@ -1,6 +1,6 @@
 from django.db.models import Case, When
 
-from elasticsearch_dsl import Search as DSLSearch
+from elasticsearch7_dsl import Search as DSLSearch
 
 
 class Search(DSLSearch):
